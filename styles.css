@@ -1,0 +1,119 @@
+/* Основные стили для тела страницы */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f8f0; /* Светлый фон для улучшения контраста */
+}
+
+#background-image {
+    position: absolute; /* Абсолютное позиционирование */
+    top: 0; /* Выровнять по верхней части */
+    left: 0; /* Выровнять по левой части */
+    width: 100%; /* Занять всю ширину */
+    height: 100%; /* Занять всю высоту */
+    object-fit: cover; /* Масштабирует изображение без искажений */
+    z-index: -1; /* Отправить изображение под контент */
+    opacity: 0.5; /* Прозрачность для создания мягкого эффекта */
+}
+/* Секция с таймером */
+#countdown-section, #card-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Высота секции — на весь экран */
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Поверх фонового изображения */
+}
+
+#countdown, #card {
+    background: rgba(255, 255, 255, 0.5); /* Прозрачный белый фон для читаемости */
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Стиль заголовка */
+h1 {
+    color: #4a7c59; /* Нежно-зеленый цвет */
+}
+
+/* Стиль текста */
+p {
+    font-size: 1.2rem;
+    color: #555; /* Темно-серый цвет для текста */
+}
+
+/* Таймер */
+#timer {
+    font-size: 2rem; /* Размер шрифта для таймера */
+    margin-top: 20px; /* Отступ сверху */
+    color: #4a7c59; /* Нежно-зеленый цвет */
+}
+
+/* Кнопка */
+button {
+    background-color: #88b67e; /* Нежно-зеленый фон кнопки */
+    color: white; /* Цвет текста кнопки */
+    padding: 15px 30px; /* Отступы внутри кнопки */
+    border: none; /* Убираем рамку */
+    border-radius: 10px; /* Скругленные углы */
+    font-size: 1.2rem; /* Размер шрифта */
+    margin-top: 20px; /* Отступ сверху */
+    cursor: pointer; /* Указатель при наведении */
+    transition: background-color 0.3s ease; /* Плавный переход цвета фона */
+}
+
+/* Дизайн для отключенной кнопки */
+button:disabled {
+    background-color: #d0e8d0; /* Цвет кнопки, когда она отключена */
+    cursor: not-allowed; /* Курсор при наведении */
+}
+
+/* Эффект при наведении на кнопку */
+button:hover:enabled {
+    background-color: #6fa960; /* Более темный зеленый цвет при наведении */
+}
+
+
+#card {
+    background: rgba(255, 255, 255, 0.7);
+        border-radius: 15px; /* Скругленные углы */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Тень */
+    padding: 20px;
+    max-width: 600px;
+    text-align: center;
+    transition: transform 0.2s; /* Плавная анимация при наведении */
+}
+
+#card:hover {
+    transform: scale(1.05); /* Увеличение при наведении */
+}
+
+h2 {
+    color: #2e8b57; /* Цвет заголовка */
+    font-size: 24px; /* Размер заголовка */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+.card-text {
+    font-size: 18px;
+    color: #333;
+    margin: 10px 0;
+    opacity: 0; /* Изначально текст скрыт */
+    transform: scale(0.95); /* Уменьшенный масштаб */
+    animation: fadeIn 1s ease forwards; /* Анимация появления */
+}
+
+/* Анимация появления текста */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.95); /* Текст немного меньше */
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1); /* Текст возвращается к обычному размеру */
+    }
+}
+
